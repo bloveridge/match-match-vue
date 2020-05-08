@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Card from './Card.vue'
+import { randomImageUrl } from '../image-fetcher';
 
 export default {
   props: {
@@ -38,7 +38,6 @@ export default {
       openedCards: [],
       pairsMatched: 0,
       pairVisibleInMilliseconds: 1500,
-      picsumApiUrl: 'https://picsum.photos/200',
       turns: 0,
     }
   },
@@ -70,11 +69,8 @@ export default {
 
     getImages: async function() {
       while (this.images.length < this.pairs) {
-        const response = await axios.get(this.picsumApiUrl)
-
-        if (response.request.responseURL) {
-          this.images.push(response.request.responseURL)
-        }
+        const url = await randomImageUrl('https://picsum.photos/200')
+        this.images.push(url)
       }
     },
 
