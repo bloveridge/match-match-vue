@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Playfield :pairs="25" />
+    <Playfield :pairs="8" />
   </div>
 </template>
 

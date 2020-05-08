@@ -31,8 +31,8 @@ export default {
 .card {
   display: inline-block;
   margin: 25px;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   vertical-align: top;
   cursor: pointer;
 }
